@@ -2,7 +2,7 @@
   "name": "diraui",
   "version": "1.0.0",
   "description": "Open Source UI",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "tw": "npx tailwindcss -i ./src/public/styles/config.css -o ./src/public/styles/style.css --watch"
   },
