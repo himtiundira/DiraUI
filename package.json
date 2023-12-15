@@ -4,7 +4,7 @@
   "description": "Open Source UI",
   "main": "index.html",
   "scripts": {
-    "tw": "npx tailwindcss -i ./src/public/styles/config.css -o ./src/public/styles/style.css --watch"
+    "tw": "npx tailwindcss -i ./src/styles/config.css -o ./src/styles/style.css --watch"
   },
   "author": "Ivan Maulana",
   "license": "ISC",

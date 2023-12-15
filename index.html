@@ -5,28 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DiraUI</title>
-    <link rel="stylesheet" href="./src/public/styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="./src/styles/style.css">
+    <script defer src="./src/scripts/alpine.js"></script>
+    <script src="./src/scripts/uicollection.js"></script>
 </head>
 
-<body style="font-family: Poppins;" class="select-none">
-    <header class="shadow-md mb-1">
+<body class="select-none font-poppins">
+    <header class="mb-1 shadow-md">
         <nav aria-label="Global"
-            class="mx-auto  flex max-w-3xl space-y-3 flex-col items-center justify-center  p-4 sm:space-y-0  sm:flex-row  sm:justify-between ">
-            <a href="#"
-                class="font-semibold border-2 border-teal-500 border-dashed text-teal-500 inline-flex h-10 w-auto px-2 items-center justify-center rounded-lg bg-gray-50">
+            class="flex flex-col items-center justify-center max-w-3xl p-4 mx-auto space-y-3 sm:space-y-0 sm:flex-row sm:justify-between ">
+            <a href="/"
+                class="inline-flex items-center justify-center w-auto h-10 px-2 font-semibold text-teal-500 border-2 border-teal-500 border-dashed rounded-lg bg-gray-50">
                 DiraUI ✨
             </a>
-            <ul class="flex justify-center items-center gap-2 text-sm  text-gray-400">
+            <ul class="flex items-center justify-center gap-2 text-sm text-gray-400">
                 <li>
-                    <a class="rounded-lg px-3 py-2" href="#">Components</a>
+                    <a class="px-3 py-2 rounded-lg" href="#">Components</a>
                 </li>
-                <li><a class="rounded-lg px-3 py-2" href="#">Animations</a></li>
+                <li><a class="px-3 py-2 rounded-lg" href="#">Animations</a></li>
                 <li>
-                    <a class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-black"
+                    <a class="inline-flex items-center gap-2 px-3 py-2 text-black rounded-lg"
                         href="https://github.com/himtiundira" target="_blank">
-                        <svg class="h-7 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg class="w-6 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
                                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                                 clip-rule="evenodd"></path>
@@ -36,8 +36,8 @@
             </ul>
         </nav>
     </header>
-    <div class="bg-gray-100 px-4 py-3 text-black">
-        <p class="text-center text-sm ">
+    <div class="px-4 py-3 text-black bg-gray-100">
+        <p class="text-sm text-center ">
             Love DiraUI?
             <a href="#" class="inline-block underline">Support Us 🎁</a>
         </p>
@@ -49,32 +49,30 @@
                     DiraUI
                 </h2>
                 <p class="max-w-md mt-4 text-gray-500">
-                    DiraUI is a collection of free UI Components and Animations that can be used in your
-                    next
-                    project.
+                    DiraUI is a collection of free UI Components and Animations that can be used in your project.
                 </p>
                 <p class="max-w-md mt-4 text-gray-500">
                     From Informatics Engineering Student Association at Dian Nusantara University.
                 </p>
             </div>
-            <div class="mt-12 flex items-center justify-between ">
+            <div class="flex items-center justify-between mt-12 ">
                 <div class="text-xl font-semibold">
-                    UI Collection
+                    Component Collection
                 </div>
-                <div class="flex rounded border border-gray-100">
+                <div class="flex border border-gray-100 rounded">
                     <button @click="cols = true, rows = false" :class="{'bg-gray-50 text-gray-700':cols}"
-                        class="inline-flex h-10 w-10 items-center justify-center border-e text-gray-600 transition hover:bg-gray-50 hover:text-gray-700">
+                        class="inline-flex items-center justify-center w-10 h-10 text-gray-600 transition border-e hover:bg-gray-50 hover:text-gray-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="h-5 w-5">
+                            stroke="currentColor" class="w-5 h-5">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
                         </svg>
                     </button>
 
                     <button @click="cols = false, rows = true" :class="{'bg-gray-50 text-gray-700':rows}"
-                        class="inline-flex h-10 w-10 items-center justify-center text-gray-600 transition hover:bg-gray-50 hover:text-gray-700">
+                        class="inline-flex items-center justify-center w-10 h-10 text-gray-600 transition hover:bg-gray-50 hover:text-gray-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="h-5 w-5">
+                            stroke="currentColor" class="w-5 h-5">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
                         </svg>
@@ -82,328 +80,46 @@
                 </div>
             </div>
             <hr class="my-5">
-            <div :class="{'grid grid-rows-1 gap-4':cols}" class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        📣
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Alerts
+            <div :class="{'grid grid-rows-1 gap-4':cols}" class="grid grid-cols-2 gap-4 sm:grid-cols-4"
+                x-data="{ listcomponent : components}">
+                <template x-for="item in listcomponent">
+                    <div @click="window.location.href = 'components/?id=' + item.id"
+                        :class="{'mb-5 hover:rotate-0':rows}"
+                        class="px-5 py-5 space-y-3 transition border-2 border-black rounded-lg cursor-pointer sm:px-10 hover:-rotate-2 hover:scale-95">
+                        <div class="text-2xl font-semibold">
+                            <span x-text="item.emote"></span>
                         </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🏆
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Badges
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
+                        <div>
+                            <div class="font-semibold text-md sm:text-2xl">
+                                <span x-text="item.title"></span>
+                            </div>
+                            <div class="mt-1 text-xs font-medium">
+                                <span x-text="item.count"></span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🍞
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Breadcrumbs
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🎹
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Buttons
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🃏
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Cards
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🥏
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Dropdowns
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        ⚠️
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Error Pages
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        📄
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Forms
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🦰
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Header
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        ⌨️
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Inputs
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🗺️
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Navigations
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🚧
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Progress
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        📻
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Radio Groups
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🗃️
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Selects
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🎫
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Side Menus
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        📊
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Stats
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        📅
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Steps
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🍽️
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Tables
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🦿
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Toggles
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
-                <div onclick="javascript: window.location.href = ''" :class="{'mb-5 hover:rotate-0':rows}"
-                    class="border-2  border-black px-5 sm:px-10 py-5  rounded-lg space-y-3 transition hover:-rotate-2 hover:scale-95 cursor-pointer">
-                    <div class="text-2xl font-semibold">
-                        🎴
-                    </div>
-                    <div>
-                        <div class="text-xl sm:text-2xl font-semibold">
-                            Vertical Menus
-                        </div>
-                        <div class="font-medium text-xs mt-1">
-                            0
-                            Components
-                        </div>
-                    </div>
-                </div>
+                </template>
             </div>
         </div>
     </section>
     <footer class="bg-white">
         <hr>
-        <div class="relative mx-auto max-w-screen-xl px-2 py-10 sm:px-6 lg:px-8 lg:pt-20">
+        <div class="relative max-w-screen-xl px-2 py-10 mx-auto sm:px-6 lg:px-8 lg:pt-20">
             <div class="lg:flex lg:items-end lg:justify-between">
                 <div>
                     <div class="flex justify-center text-teal-500 lg:justify-start">
                         <div
-                            class="font-semibold border-2 border-teal-500 border-dashed inline-flex h-10 w-auto px-2 items-center justify-center rounded-lg bg-gray-50">
+                            class="inline-flex items-center justify-center w-auto h-10 px-2 font-semibold border-2 border-teal-500 border-dashed rounded-lg bg-gray-50">
                             DiraUI ✨
                         </div>
                     </div>
                     <p
-                        class="mx-auto mt-6 max-w-md text-center font-medium text-base leading-relaxed text-gray-400 lg:text-left">
-                        Free open source components UI, Animations, Colors.
+                        class="max-w-md mx-auto mt-6 text-base font-medium leading-relaxed text-center text-gray-400 lg:text-left">
+                        Free open source components UI and Animations.
                         Made with ❤️ for everyone.
                     </p>
                 </div>
-                <p class="mt-12 text-center   font-medium  text-sm text-gray-400 lg:text-right">
+                <p class="mt-12 text-sm font-medium text-center text-gray-400 lg:text-right">
                     Copyright &copy; 2023. All rights reserved.
                 </p>
             </div>

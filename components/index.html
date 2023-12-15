@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiraUI</title>
+    <link rel="stylesheet" href="../src/styles/style.css">
+    <link rel="stylesheet" href="../src/styles/prism.css">
+    <script defer src="../src/scripts/alpine.js"></script>
+    <script defer src="../src/scripts/prism.js"></script>
+    <script src="../src/scripts/uicollection.js"></script>
+</head>
+
+<body class="select-none font-poppins">
+    <header class="mb-1 shadow-md">
+        <nav aria-label="Global"
+            class="flex flex-col items-center justify-center max-w-3xl p-4 mx-auto space-y-3 sm:space-y-0 sm:flex-row sm:justify-between ">
+            <a href="/"
+                class="inline-flex items-center justify-center w-auto h-10 px-2 font-semibold text-teal-500 border-2 border-teal-500 border-dashed rounded-lg bg-gray-50">
+                DiraUI ✨
+            </a>
+            <ul class="flex items-center justify-center gap-2 text-sm text-gray-400">
+                <li>
+                    <a class="px-3 py-2 rounded-lg" href="#">Components</a>
+                </li>
+                <li><a class="px-3 py-2 rounded-lg" href="#">Animations</a></li>
+                <li>
+                    <a class="inline-flex items-center gap-2 px-3 py-2 text-black rounded-lg"
+                        href="https://github.com/himtiundira" target="_blank">
+                        <svg class="w-6 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="px-4 py-3 text-black bg-gray-100">
+        <p class="text-sm text-center ">
+            Love DiraUI?
+            <a href="#" class="inline-block underline">Support Us 🎁</a>
+        </p>
+    </div>
+    <section class="h-auto" x-data="{cols:true,rows:false}">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+            <div>
+                <nav aria-label="Breadcrumb" class="flex">
+                    <ol class="flex overflow-hidden text-gray-600 border border-gray-200 rounded-lg">
+                        <li class="flex items-center">
+                            <a href="/"
+                                class="flex h-10 items-center gap-1.5 bg-gray-100 px-4 transition hover:text-gray-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                </svg>
+
+                                <span class="ms-1.5 text-xs font-medium"> DiraUI </span>
+                            </a>
+                        </li>
+                        <li class="relative flex items-center">
+                            <span
+                                class="absolute inset-y-0 -start-px h-10 w-4 bg-gray-100   [clip-path:_polygon(0_0,_0%_100%,_100%_50%)] rtl:rotate-180">
+                            </span>
+                            <a href="/"
+                                class="flex h-10 items-center gap-1.5 bg-gray-50 px-4 transition hover:text-gray-900">
+                                <span class="ms-1.5 text-xs font-medium">Components </span>
+                            </a>
+                        </li>
+                        <li class="relative flex items-center">
+                            <span
+                                class="absolute inset-y-0 -start-px h-10 w-4 bg-gray-50 [clip-path:_polygon(0_0,_0%_100%,_100%_50%)] rtl:rotate-180">
+                            </span>
+                            <span
+                                class="flex items-center h-10 text-xs font-medium transition bg-white pe-4 ps-8 hover:text-gray-900"
+                                x-data="{  listcomponent : ''}"
+                                x-init="listcomponent = components.filter(item => item.id == new URLSearchParams(window.location.search).get('id'))">
+                                <template x-for="item in listcomponent">
+                                    <div>
+                                        <span x-text="item.emote"></span>
+                                        <span x-text="item.title"></span>
+                                    </div>
+                                </template>
+                            </span>
+                        </li>
+                    </ol>
+                </nav>
+                <div class="flex items-center justify-between">
+                    <p class="max-w-md mt-4 text-gray-500">
+                        Free Open Source Components of TailwindCSS, Boostraps, and CSS Native.
+                    </p>
+                </div>
+
+            </div>
+            <hr class="mt-4 mb-8">
+            <div x-data="{full:true, large:false, medium:false, small:false, mobile:false}">
+                <div x-data="{ view: false, BtnView:false  }">
+                    <div class="flex flex-col items-center justify-start sm:flex-row sm:justify-between ">
+                        <div class="text-xl font-semibold">
+                            #Tailwindcss
+                        </div>
+                        <div class="flex flex-row items-center mt-5 space-x-4 sm:mt-0">
+                            <button @click="view =! view, BtnView =! BtnView" :class="{'bg-black text-white':BtnView}"
+                                class="px-2 py-1 transition border-2 border-black rounded-md hover:rotate-2 hover:scale-110"
+                                type="button">
+                                <div :class="{ 'hidden': !view, 'block mr-2': view }">🎨 Preview</div>
+                                <div :class="{ 'block mr-2': !view, 'hidden': view }">
+                                    <div class="flex flex-row items-center justify-center space-x-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4">
+                                            </path>
+                                        </svg>
+                                        <div>Show Code</div>
+                                    </div>
+                                </div>
+                            </button>
+                            <div x-data="{ countdown: 0 }" x-init="setInterval(function(){
+                                countdown--;
+                                if(countdown < 1) {
+                                countdown = countdown = 0;
+                                 }
+                                    }, 1000);
+                                    ">
+                                <template x-if="countdown > 0">
+                                    <button
+                                        class="px-2 py-1 transition border-2 border-black rounded-md hover:rotate-2 hover:scale-110"
+                                        type="button">
+                                        🎉 Copied!
+                                    </button>
+                                </template>
+                                <template x-if="countdown==0">
+                                    <button @click="countdown = 5"
+                                        class="px-2 py-1 transition border-2 border-black rounded-md hover:rotate-2 hover:scale-110"
+                                        type="button">
+                                        📋 Copy
+                                    </button>
+                                </template>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <iframe x-show="view != true"
+                            :class="{ 'w-full':full,'w-10/12':large,'w-6/12':medium,'w-5/12':small,'w-4/12':mobile}"
+                            class=" w-full h-[600px] border-2 border-black rounded-md overflow-auto mt-5"
+                            srcdoc="<h1 class='text-red-500'>hellow world</h1>">
+                        </iframe>
+                    </div>
+                    <div class="mt-5 line-numbers">
+                        <pre x-show="view" class="scroll-smooth overflow-auto rounded-lg  h-[600px] select-text">
+                    <code class="language-html" data-prismjs-copy="📋 Copy" data-prismjs-copy-success="🎉 Copied!">
+                            kode
+                    </code>
+                </pre>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center mt-5 ">
+                    <div class="hidden space-x-4 sm:block">
+                        <button @click="full= false, large = false, medium = false, small = false, mobile = true"
+                            :class="{ 'bg-black text-white':mobile}"
+                            class="px-2 py-1 transition border-2 border-black rounded-md hover:rotate-2 hover:scale-110"
+                            type="button">
+                            📱 Mobile
+                        </button>
+                        <button @click="full= false, large = false, medium = false, small = true, mobile = false"
+                            :class="{ 'bg-black text-white':small}"
+                            class="px-2 py-1 transition border-2 border-black rounded-md hover:rotate-2 hover:scale-110"
+                            type="button">
+                            🐜 Small
+                        </button>
+                        <button @click="full= false, large = false, medium = true, small = false, mobile = false"
+                            :class="{ 'bg-black text-white':medium}"
+                            class="px-2 py-1 transition border-2 border-black rounded-md hover:rotate-2 hover:scale-110"
+                            type="button">
+                            🐢 Medium
+                        </button>
+                        <button @click="full= false, large = true, medium = false, small = false, mobile = false"
+                            :class="{ 'bg-black text-white':large}"
+                            class="px-2 py-1 transition border-2 border-black rounded-md hover:rotate-2 hover:scale-110"
+                            type="button">
+                            🐘 Large
+                        </button>
+                        <button @click="full= true, large = false, medium = false, small = false, mobile = false"
+                            :class="{ 'bg-black text-white':full}"
+                            class="px-2 py-1 transition border-2 border-black rounded-md hover:rotate-2 hover:scale-110"
+                            type="button">
+                            🌐 Full
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer class="bg-white">
+        <hr>
+        <div class="relative max-w-screen-xl px-2 py-10 mx-auto sm:px-6 lg:px-8 lg:pt-20">
+            <div class="lg:flex lg:items-end lg:justify-between">
+                <div>
+                    <div class="flex justify-center text-teal-500 lg:justify-start">
+                        <div
+                            class="inline-flex items-center justify-center w-auto h-10 px-2 font-semibold border-2 border-teal-500 border-dashed rounded-lg bg-gray-50">
+                            DiraUI ✨
+                        </div>
+                    </div>
+                    <p
+                        class="max-w-md mx-auto mt-6 text-base font-medium leading-relaxed text-center text-gray-400 lg:text-left">
+                        Free open source components UI and Animations.
+                        Made with ❤️ for everyone.
+                    </p>
+                </div>
+                <p class="mt-12 text-sm font-medium text-center text-gray-400 lg:text-right">
+                    Copyright &copy; 2023. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
